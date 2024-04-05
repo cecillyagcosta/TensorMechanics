@@ -1,0 +1,8 @@
+https://www.youtube.com/watch?v=n6svxsAOdgQ -- How to open NC or DSTV files?
+https://www.youtube.com/watch?v=pscfBm0AXRE -- How to Convert NC File to Excel
+https://www.youtube.com/watch?v=NmPUQVZzVNI -- Free NetCDF Viewer in Windows
+https://www.youtube.com/watch?v=ue55Mxe4yVQ&list=PLLxyyob7YmEE8S3QDs1PZQkiBxA4zn_Gx -- Download Temperature and Precipitation Data in netCDF- Handling netCDF Files using Python [Part 1]
+https://youtu.be/mmCmo9XUQUg?si=_j1WAvCUk1ShPqx_ -- Open NC File Software - Using CMIP6 Miroc6 and GFDL-ESM4 models
+https://www.youtube.com/watch?v=hrm5RmsVXo0&list=PLLxyyob7YmEE8S3QDs1PZQkiBxA4zn_Gx&index=3 -- main video --> Extracting time series data from a netCDF file into a CSV (Part 3)
+https://nctoolkit.readthedocs.io/en/latest/exporting.html -- alternative
+https://medium.com/@4534aroo_95440/data-extraction-and-conversion-from-netcdf4-to-pandas-dataframe-2e39d1e9e91f
