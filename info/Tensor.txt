@@ -1,0 +1,5 @@
+https://www.youtube.com/watch?v=Z2SGE3_2Grg&list=PLyqOvdQmGdTTRYIm2jPsirBviWc2k0rdt -- Introdução a Redes Neurais e Deep Learning
+https://www.youtube.com/watch?v=5Ym-dOS9ssA&list=PLhhyoLH6IjfxVOdVC1P1L5z5azs0XjMsb -- TensorFlow Tutorial 1 - Installation and Setup Deep Learning Environment (Anaconda and PyCharm)
+https://www.youtube.com/watch?v=tPYj3fFJGjk -- TensorFlow 2.0 Complete Course - Python Neural Networks for Beginners Tutorial
+https://www.youtube.com/watch?v=t5z5lyrb-7s -- Introdução ao Machine Learning (ML de Zero a 100, parte 1)
+
