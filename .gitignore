@@ -151,3 +151,6 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 *.nc
+Main/nc_to_pd/lab4.py
+Main/nc_to_pd/lab2.py
+Main/nc_to_pd/lab3.py

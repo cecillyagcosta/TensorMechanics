@@ -21,13 +21,11 @@ finalframe.columns = ['Y', 'X', 'Time']
 
 #Graphic Buildup
 #Clouds in coords 0,0 and time 0
-
 x0 = finalframe['X'][0]
 y0 = finalframe['Y'][0]
 z0 = finalframe['Time'][0]
 
 #Clouds in coords 1,1 and time 1
-
 x1 = finalframe['X'][1]
 y1 = finalframe['Y'][1]
 z1 = finalframe['Time'][1]
