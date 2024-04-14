@@ -1,23 +1,34 @@
-import netCDF4 as nc
+import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
 
-#simple call and load file
+# Dados do primeiro conjunto
+x1 = np.random.normal(0, 1, 100)
+y1 = np.random.normal(0, 1, 100)
+z1 = np.random.normal(0, 1, 100)
 
-sample_path = r"C:/Users/cecil/Desktop/Neural/TensorMechanics/Sample/APHRO_MA_TAVE_025deg_V1808.1961.nc/sample_1961.nc"
-data = nc.Dataset(sample_path)
+# Dados do segundo conjunto
+x2 = np.random.normal(1, 1, 100)
+y2 = np.random.normal(1, 1, 100)
+z2 = np.random.normal(1, 1, 100)
 
-#show variables of the dataset
+# Criar figura e eixos
+fig, ax = plt.subplots()
 
-print(data.variables.keys())
+# Scatter plot do primeiro conjunto
+sc1 = ax.scatter(x1, y1, c=z1, cmap='viridis', label='Conjunto 1')
 
-lon = data.variables['lon']
-lat = data.variables['lat']
-time = data.variables['time']
-tave = data.variables['tave']
-rstn = data.variables['rstn']
+# Scatter plot do segundo conjunto
+sc2 = ax.scatter(x2, y2, c=z2, cmap='viridis', label='Conjunto 2')
 
-list = [lon, lat, time, tave, rstn]
+# Adicionar barra de cores
+plt.colorbar(sc1, ax=ax, label='Z')
 
-for each in list:
-    print(each)
+# Rótulos dos eixos
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+
+# Legenda
+ax.legend()
+
+# Mostrar gráfico
+plt.show()
