@@ -154,3 +154,4 @@ cython_debug/
 Main/nc_to_pd/lab4.py
 Main/nc_to_pd/lab2.py
 Main/nc_to_pd/lab3.py
+Main/nc_to_pd/script_vertint_examplecode.py
