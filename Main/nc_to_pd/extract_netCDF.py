@@ -1,36 +1,8 @@
-from netCDF4 import Dataset
-import numpy as np
+import os
+import matplotlib.pyplot as plt 
+import netCDF4 as nc
 
-# Reading in the netCDF file 
-data = Dataset(r'D:\GeoDeltaLabs Projects\Handling netCDF files with Python\Temparature Data\1961.nc', 'r')
-
-# Displaying the names of the variables
+data = nc.Dataset("C:/Users/cecil/OneDrive/Documents/GitHub/TensorMechanics/Sample/Arquivos_Ceci/VL_0-0-0.nc")
 print(data.variables.keys())
-
-# Accessing the variables
-lon = data.variables['lon']
-print(lon)
-
-lat = data.variables['lat']
-print(lat)
-
-time = data.variables['time']
-print(time)
-
-tave = data.variables['tave']
-print(tave)
-
-# Accessing the data from the variables
-# the "[:]" give all the available data from that particular variable.
-
-
-time_data = data.variables['time'][:]
-print(time_data)
-
-lon_data = data.variables['lon'][:]
-print(lon_data)
-
-lat_data = data.variables['lat'][:]
-print(lat_data)
-
+print(data['vertint_liq'][:])
 

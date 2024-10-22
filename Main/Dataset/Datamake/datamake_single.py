@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from skimage import io, color, measure, morphology
 
 # Carregar a imagem
-image_path = "C:/Users/cecil/OneDrive/Documents/GitHub/TensorMechanics/Main/Dataset/Data/subjects/t128/t128.png"
+image_path = "C:/Users/cecil/OneDrive/Documents/Dataset_CloudOrgs/DATASAMPLE_organization/subjects/t128/t128.png"
 
 # "C:/Users/cecil/OneDrive/Documents/GitHub/TensorMechanics/Main/Dataset/Data/test/Figure_2.png"
 # "C:/Users/cecil/OneDrive/Documents/GitHub/TensorMechanics/Main/Dataset/Data/subjects/t128/t128.png"

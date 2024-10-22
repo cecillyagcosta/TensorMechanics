@@ -25,7 +25,7 @@ plt.show()
 train_images = train_images / 255.0
 
 test_images = test_images / 255.0
-
+2
 model = keras.Sequential([
     keras.layers.Flatten(input_shape=(28, 28)),  # input layer (1)
     keras.layers.Dense(128, activation='relu'),  # hidden layer (2)
@@ -36,7 +36,7 @@ model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 
-model.fit(train_images, train_labels, epochs=4)  # we pass the data, labels and epochs and watch the magic!
+model.fit(train_images, train_labels, epochs=3)  # we pass the data, labels and epochs and watch the magic!
 
 test_loss, test_acc = model.evaluate(test_images,  test_labels, verbose=1) 
 
