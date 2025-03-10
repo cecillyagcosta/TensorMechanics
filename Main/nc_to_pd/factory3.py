@@ -2,8 +2,8 @@ import os
 import matplotlib.pyplot as plt 
 import netCDF4 as nc
 
-path = "C:/Users/cecil/OneDrive/Documents/GitHub/TensorMechanics/Main/Dataset/vertint_sample/VL_0-0-0.nc"
-outdir = "C:/Users/cecil/OneDrive/Documents/Dataset_CloudOrgs/VL0/Source_newVMAX_600"
+path = "C:/Users/cecil/OneDrive/Documents/GitHub/TensorMechanics/Main/Dataset/vertint_sample/CM3_0-0-0.nc"
+outdir = "D:/CNNData/LWPimages/CM/CM3_0-0-0"
 
 data = nc.Dataset(path)
 time = data['cloud_m3'].shape[0]
