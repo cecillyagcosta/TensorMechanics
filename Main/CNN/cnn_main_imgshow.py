@@ -26,7 +26,7 @@ def detect_clouds(image, plot=False):
     binary = gray_image > threshold_value
 
     # Remover pequenos objetos
-    cleaned = morphology.remove_small_objects(binary, min_size=50)
+    cleaned = morphology.remove_small_objects(binary, min_size=10)
 
     # Encontrar contornos das figuras
     labels = measure.label(cleaned)
