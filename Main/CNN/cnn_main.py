@@ -9,24 +9,12 @@ from tensorflow.keras.callbacks import Callback
 from scipy.spatial.distance import cdist
 from skimage import io, color, measure, morphology
 
-# Função para detectar nuvens (usando seu código)
+# Função para detectar nuvens
 def detect_clouds(image):
-    """
-    Detecta nuvens em uma imagem usando limiarização e segmentação.
-    """
-    # Converter para escala de cinza
     gray_image = color.rgb2gray(image)
-
-    # Definir o limiar para identificar regiões com valores acima de 100
-    threshold_value = 33.3 / 400  # Normalizar para a escala de 0 a 1
-
-    # Aplicar o limiar
+    threshold_value = 33.3 / 400
     binary = gray_image > threshold_value
-
-    # Remover pequenos objetos
     cleaned = morphology.remove_small_objects(binary, min_size=10)
-
-    # Encontrar contornos das figuras
     labels = measure.label(cleaned)
     regions = measure.regionprops(labels)
 
@@ -44,9 +32,6 @@ def detect_clouds(image):
 
 # Função para calcular o COP
 def calculate_cop(image):
-    """
-    Calcula o índice COP para uma imagem.
-    """
     # 1. Detectar nuvens
     cloud_centers, cloud_radii = detect_clouds(image)
 
@@ -54,7 +39,7 @@ def calculate_cop(image):
     num_clouds = len(cloud_centers)
     if num_clouds < 2:
         return 0.0  # Não há pares de nuvens
-
+    
     distances = cdist(cloud_centers, cloud_centers)
     cop_value = 0.0
     count = 0
@@ -83,8 +68,7 @@ def load_images_and_calculate_cop(image_dir, target_size=(128, 128)):
             cop_values.append(calculate_cop(img))  # Calcular o COP
     return np.array(images), np.array(cop_values)
 
-# Diretório com as imagens
-image_dir = 'D:/CNNData/LWPimages/VL/VL_0-4-0'
+image_dir = 'D:/CNNData/LWPimages/VL/VL_0-2-0'
 images, cop_values = load_images_and_calculate_cop(image_dir)
 print(f"Total de imagens carregadas: {len(images)}")
 print(f"Formato das imagens: {images.shape}")  # Deve ser (num_imagens, 128, 128, 3)
@@ -103,7 +87,7 @@ class COPCallback(Callback):
         print(f"  Train Loss: {logs['loss']:.4f}, Val Loss: {logs['val_loss']:.4f}")
         print(f"  Train MAE: {logs['mae']:.4f}, Val MAE: {logs['val_mae']:.4f}")
 
-# 4. Definir e treinar a CNN
+# Treino da CNN
 model = Sequential([
     Conv2D(32, (3, 3), activation='relu', input_shape=(128, 128, 3)),
     MaxPooling2D((2, 2)),
@@ -118,7 +102,7 @@ model = Sequential([
     Dense(1)  # Saída única para prever o COP
 ])
 
-# Compilar o modelo
+# Compilar o modelo usando Adam
 model.compile(optimizer=Adam(learning_rate=0.001), loss='mean_squared_error', metrics=['mae'])
 
 # Treinar o modelo com o callback personalizado
